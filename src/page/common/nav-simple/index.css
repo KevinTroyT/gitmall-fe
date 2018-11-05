@@ -1,0 +1,21 @@
+/*
+* @Author: KevinTroyT
+* @Date:   2018-11-05 16:26:37
+* @Last Modified by:   KevinTroyT
+* @Last Modified time: 2018-11-05 16:30:42
+*/
+.nav-simple
+{
+    line-height: 60px;
+
+    height: 60px;
+
+    border-bottom: 1px #ddd solid;
+    background-color: #fff;
+}
+.nav-simple .logo
+{
+    font-size: 26px;
+    font-weight: bold;
+    color: #c60023;
+}

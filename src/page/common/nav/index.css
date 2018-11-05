@@ -1,0 +1,27 @@
+/*
+* @Author: KevinTroyT
+* @Date:   2018-11-05 16:39:30
+* @Last Modified by:   KevinTroyT
+* @Last Modified time: 2018-11-05 16:46:01
+*/
+.nav{
+    background: #eee;
+    height: 30px;
+    line-height: 30px;
+}
+/*用户*/
+.nav .user{
+    float: left;
+}
+.nav .user.login{
+    display: none;
+}
+.nav .user .link{
+    margin-right: 5px;
+}
+/*导航连接部分*/
+.nav .nav-list .nav-item{
+    float: right;
+    display: inline-block;
+    margin-left: 10px;
+}

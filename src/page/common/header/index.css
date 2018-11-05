@@ -1,0 +1,44 @@
+/*
+* @Author: KevinTroyT
+* @Date:   2018-11-05 19:57:18
+* @Last Modified by:   KevinTroyT
+* @Last Modified time: 2018-11-05 20:21:56
+*/
+/*通用头部导航*/
+.header .logo
+{
+    font-family: tahoma;
+    font-size: 36px;
+    font-weight: bold;
+
+    position: absolute;
+    top: 34px;
+    left: 60px;
+
+    display: block;
+
+    color: #c60023;
+}
+.header .search-con
+{
+    padding: 40px 0 30px 250px;
+}
+.header .search-con .search-input
+{
+    font-size: 15px;
+    line-height: 40px;
+
+    width: 550px;
+    height: 40px;
+    padding-left: 10px;
+
+    border: 2px #c60023 solid;
+    outline: none;
+}
+.header .search-con .search-btn
+{
+    position: absolute;
+
+    width: 80px;
+    height: 44px;
+}

@@ -1,0 +1,23 @@
+/*
+* @Author: KevinTroyT
+* @Date:   2018-11-05 19:51:14
+* @Last Modified by:   KevinTroyT
+* @Last Modified time: 2018-11-05 19:54:20
+*/
+.footer
+{
+    padding-bottom: 10px;
+}
+.footer .links
+{
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}
+.footer .links .link{
+    padding: 0 10px;
+}
+.footer .copyright
+{
+    text-align: center;
+}

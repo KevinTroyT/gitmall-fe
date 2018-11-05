@@ -2,30 +2,32 @@
 * @Author: KevinTroyT
 * @Date:   2018-10-31 19:17:41
 * @Last Modified by:   KevinTroyT
-* @Last Modified time: 2018-11-01 11:06:14
+* @Last Modified time: 2018-11-05 21:49:54
 */
-var HtmlWebpackPlugin       =   require('html-webpack-plugin')
-var webpack                 =   require('webpack');
-var Ex                      =   require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin           =       require('html-webpack-plugin')
+const webpack                     =       require('webpack');
+const extractTextWebpackPlugin    =       require('extract-text-webpack-plugin');
 //环境变量配置，dev / online
-var WEBPACK_ENV             =   process.env.WEBPACK_ENV || 'dev';
+const WEBPACK_ENV                 =       process.env.WEBPACK_ENV || 'dev';
 
 //获取html-webpack-plugin参数的方法
-var getHtmlConfig = function(name){
+let getHtmlConfig = function(name,title){
     return {
         template    : './src/view/'+name+'.html',
         filename    : 'view/'+name+'.html',
+        title       : title,
         inject      : true,
         hash        : true,
         chunks      : ['common',name]
     };
 };
 //webpack config
-var config = {
+let config = {
     entry: {
-        'common' : ['./src/page/common/index.js','webpack-dev-server/client?http://localhost:8088/'],
-        'index' : ['./src/page/index/index.js'],
-        'login' : ['./src/page/login/index.js'],
+        'common'    : ['./src/page/common/index.js','webpack-dev-server/client?http://localhost:8088/'],
+        'index'     : ['./src/page/index/index.js'],
+        'login'     : ['./src/page/login/index.js'],
+        'result'    : ['./src/page/result/index.js'],
     },
     output: {
         path        : './dist',
@@ -37,9 +39,25 @@ var config = {
     },
     module : {
         loaders: [
-            { test: /\.css$/, loader: Ex.extract('style-loader', 'css-loader') }, // 单独打包出CSS，这里配置注意下
-            { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/,loader:'url-loader?limit=100&name=resource/[name].[ext]'}
+            {   test: /\.css$/,
+                loader: extractTextWebpackPlugin.extract('style-loader', 'css-loader') 
+            }, // 单独打包出CSS，这里配置注意下
+            {   test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/,
+                loader:'url-loader?limit=100&name=resource/[name].[ext]'
+            },
+            {   test: /\.string$/,
+                loader: 'html-loader' 
+            }, 
         ]
+    },  
+    resolve : {
+        alias: {
+            node            :    __dirname + '/node_modules',
+            util            :    __dirname + '/src/util',
+            page            :    __dirname + '/src/page',
+            service         :    __dirname + '/src/service',
+            image           :    __dirname + '/src/image'
+        }
     },
     plugins:[
     //独立通用模块到js/base.js
@@ -48,10 +66,11 @@ var config = {
             filename : 'js/base.js'
         }), 
     //单独打包css文件
-        new Ex("css/[name].css"),
+        new extractTextWebpackPlugin("css/[name].css"),
     //html模版处理
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('login'))
+        new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('login','用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
     ]
 };
 if ('dev' === WEBPACK_ENV){
