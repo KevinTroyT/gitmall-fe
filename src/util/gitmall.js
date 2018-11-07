@@ -1,8 +1,8 @@
 /*
 * @Author: KevinTroyT
 * @Date:   2018-11-01 14:03:32
-* @Last Modified by:   KevinTroyT
-* @Last Modified time: 2018-11-05 15:04:38
+ * @Last modified by:   KevinTroyT
+ * @Last modified time: 2018-11-07T15:18:09+08:00
 */
 'use strict';
 var Hogan = require('hogan.js')
@@ -33,10 +33,10 @@ var _gm = {
                 }
             },
             error           : function(error){
-                typeof param.error === 'function' && param.error(err.status)
+                typeof param.error === 'function' && param.error(error.status)
             }
-        });  
-    }, 
+        });
+    },
     getServerUrl : function(path){
         return conf.serverHost + path;
     },
@@ -73,12 +73,12 @@ var _gm = {
         }
         // 邮箱验证
         if('mail' === type){
-            return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value);
+              return /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(value);
         }
     },
     //统一登录处理
     doLogin : function(){
-        window.location.href= './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href= './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     goHome : function(){
         window.location.href= './index.html';

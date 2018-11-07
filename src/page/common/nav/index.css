@@ -1,13 +1,14 @@
 /*
 * @Author: KevinTroyT
 * @Date:   2018-11-05 16:39:30
-* @Last Modified by:   KevinTroyT
-* @Last Modified time: 2018-11-05 16:46:01
+ * @Last modified by:   KevinTroyT
+ * @Last modified time: 2018-11-07T15:27:12+08:00
 */
 .nav{
     background: #eee;
     height: 30px;
     line-height: 30px;
+    font-size: 12px;
 }
 /*用户*/
 .nav .user{
@@ -17,11 +18,11 @@
     display: none;
 }
 .nav .user .link{
-    margin-right: 5px;
+    margin-right: 10px;
 }
 /*导航连接部分*/
 .nav .nav-list .nav-item{
     float: right;
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 20px;
 }

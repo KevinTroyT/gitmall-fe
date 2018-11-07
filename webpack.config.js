@@ -1,8 +1,8 @@
 /*
 * @Author: KevinTroyT
 * @Date:   2018-10-31 19:17:41
-* @Last Modified by:   KevinTroyT
-* @Last Modified time: 2018-11-05 21:49:54
+ * @Last modified by:   KevinTroyT
+ * @Last modified time: 2018-11-07T14:08:27+08:00
 */
 const HtmlWebpackPlugin           =       require('html-webpack-plugin')
 const webpack                     =       require('webpack');
@@ -24,10 +24,11 @@ let getHtmlConfig = function(name,title){
 //webpack config
 let config = {
     entry: {
-        'common'    : ['./src/page/common/index.js','webpack-dev-server/client?http://localhost:8088/'],
-        'index'     : ['./src/page/index/index.js'],
-        'login'     : ['./src/page/login/index.js'],
-        'result'    : ['./src/page/result/index.js'],
+        'common'            : ['./src/page/common/index.js','webpack-dev-server/client?http://localhost:8088/'],
+        'index'             : ['./src/page/index/index.js'],
+        'user-login'        : ['./src/page/user-login/index.js'],
+        'user-register'     : ['./src/page/user-register/index.js'],
+        'result'            : ['./src/page/result/index.js'],
     },
     output: {
         path        : './dist',
@@ -40,16 +41,16 @@ let config = {
     module : {
         loaders: [
             {   test: /\.css$/,
-                loader: extractTextWebpackPlugin.extract('style-loader', 'css-loader') 
+                loader: extractTextWebpackPlugin.extract('style-loader', 'css-loader')
             }, // 单独打包出CSS，这里配置注意下
             {   test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/,
                 loader:'url-loader?limit=100&name=resource/[name].[ext]'
             },
             {   test: /\.string$/,
-                loader: 'html-loader' 
-            }, 
+                loader: 'html-loader'
+            },
         ]
-    },  
+    },
     resolve : {
         alias: {
             node            :    __dirname + '/node_modules',
@@ -64,12 +65,13 @@ let config = {
         new webpack.optimize.CommonsChunkPlugin({
             name : 'common',
             filename : 'js/base.js'
-        }), 
+        }),
     //单独打包css文件
         new extractTextWebpackPlugin("css/[name].css"),
     //html模版处理
         new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
-        new HtmlWebpackPlugin(getHtmlConfig('login','用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
         new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
     ]
 };

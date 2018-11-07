@@ -1,8 +1,8 @@
 /*
 * @Author: KevinTroyT
 * @Date:   2018-11-05 16:39:41
-* @Last Modified by:   KevinTroyT
-* @Last Modified time: 2018-11-05 19:40:41
+ * @Last modified by:   KevinTroyT
+ * @Last modified time: 2018-11-07T15:29:14+08:00
 */
 require('./index.css');
 const _gm = require('util/gitmall.js')
@@ -24,7 +24,7 @@ let nav = {
         // 注册点击
         $('.js-register').click(function(event) {
             /* Act on the event */
-            window.location.href = "./register.html"
+            window.location.href = "./user-register.html"
         });
         // 退出点击事件
         $('.js-logout').click(function(event) {
@@ -39,7 +39,7 @@ let nav = {
     //加载用户信息
     loadUserInfo : function(){
         _user.checkLogin(function(res){
-            $('.user.not-login').hide().siblings('.user.login').show().finde('.username').text('res.username')
+            $('.user.not-login').hide().siblings('.user.login').show().find('.username').text(res.username)
         },function(errMsg){
             //Do Nothing
         })
