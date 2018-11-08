@@ -2,7 +2,7 @@
 * @Author: KevinTroyT
 * @Date:   2018-11-01 14:03:32
  * @Last modified by:   KevinTroyT
- * @Last modified time: 2018-11-07T15:18:09+08:00
+ * @Last modified time: 2018-11-07T16:05:51+08:00
 */
 'use strict';
 var Hogan = require('hogan.js')
@@ -76,7 +76,7 @@ var _gm = {
               return /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(value);
         }
     },
-    //统一登录处理
+    //统一登录处理    
     doLogin : function(){
         window.location.href= './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },

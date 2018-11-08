@@ -1,8 +1,8 @@
 /*
 * @Author: KevinTroyT
 * @Date:   2018-11-05 21:12:03
-* @Last Modified by:   KevinTroyT
-* @Last Modified time: 2018-11-05 21:37:35
+ * @Last modified by:   KevinTroyT
+ * @Last modified time: 2018-11-08T09:35:38+08:00
 */
 
 require('./index.css');
@@ -15,7 +15,7 @@ let navSide = {
         navList : [
             {name: 'user-center', desc: '个人中心', href:'./user-center.html'},
             {name: 'order-list', desc: '我的订单', href:'./order-list.html'},
-            {name: 'pass-update', desc: '修改密码', href:'./pass-update.html'},
+            {name: 'user-pass-update', desc: '修改密码', href:'./user-pass-update.html'},
             {name: 'about', desc: '关于GitMall', href:'./about.html'}
         ]
     },

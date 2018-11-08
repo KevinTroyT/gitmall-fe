@@ -1,0 +1,41 @@
+/**
+ * @Author: KevinTroyT
+ * @Date:   2018-11-07T21:38:24+08:00
+ * @Email:  q964049459@gmail.com
+ * @Last modified by:   KevinTroyT
+ * @Last modified time: 2018-11-07T23:23:01+08:00
+ */
+.form-line
+{
+    font-size: 14px;
+    line-height: 30px;
+
+    height: 30px;
+    margin-bottom: 30px;
+}
+.form-line .label
+{
+    display: inline-block;
+
+    width: 200px;
+
+    text-align: right;
+}
+.btn-submit
+{
+    display: block;
+
+    width: 200px;
+    margin-top: 50px;
+    margin-left: 120px;
+
+    text-align: center;
+}
+.form-line .input
+{
+    font-size: 14px;
+
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+}

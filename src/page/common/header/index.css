@@ -1,8 +1,8 @@
 /*
 * @Author: KevinTroyT
 * @Date:   2018-11-05 19:57:18
-* @Last Modified by:   KevinTroyT
-* @Last Modified time: 2018-11-05 20:21:56
+ * @Last modified by:   KevinTroyT
+ * @Last modified time: 2018-11-07T21:43:19+08:00
 */
 /*通用头部导航*/
 .header .logo
@@ -41,4 +41,17 @@
 
     width: 80px;
     height: 44px;
+}
+/* 面包屑导航*/
+.crump
+{
+    font-size: 14px;
+    line-height: 50px;
+
+    height: 50px;
+    margin-bottom: 10px;
+
+    color: #888;
+    background-color: #eee;
+    border-top: 2px #c60023 solid;
 }

@@ -1,11 +1,13 @@
 /*
 * @Author: KevinTroyT
 * @Date:   2018-11-05 19:51:14
-* @Last Modified by:   KevinTroyT
-* @Last Modified time: 2018-11-05 19:54:20
+ * @Last modified by:   KevinTroyT
+ * @Last modified time: 2018-11-07T20:17:21+08:00
 */
 .footer
 {
+    border-top: 1px #ddd solid;
+    padding-top: 40px;
     padding-bottom: 10px;
 }
 .footer .links
