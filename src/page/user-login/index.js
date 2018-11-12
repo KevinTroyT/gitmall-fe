@@ -1,15 +1,15 @@
 /*
 * @Author: KevinTroyT
 * @Date:   2018-10-31 19:26:34
-* @Last Modified by:   KevinTroyT
-* @Last Modified time: 2018-11-01 09:18:57
+ * @Last modified by:   troykevin
+ * @Last modified time: 2018-11-13T00:05:11+08:00
 */
 
-'use strict'; 
+'use strict';
 require('./index.css');
 require('page/common/nav-simple/index.js')
-const _gm       = require('util/gitmall.js') 
-const _user     = require('service/user-service.js') 
+const _gm       = require('util/gitmall.js')
+const _user     = require('service/user-service.js')
 //表单里的错误提示
 const formError = {
     show : function(errMsg){

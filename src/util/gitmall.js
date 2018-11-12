@@ -1,18 +1,18 @@
 /*
 * @Author: KevinTroyT
 * @Date:   2018-11-01 14:03:32
- * @Last modified by:   KevinTroyT
- * @Last modified time: 2018-11-07T16:05:51+08:00
+ * @Last modified by:   troykevin
+ * @Last modified time: 2018-11-13T00:14:51+08:00
 */
 'use strict';
-var Hogan = require('hogan.js')
-var conf = {
+let Hogan = require('hogan.js')
+let conf = {
     serverHost : ''
 }
-var _gm = {
+let _gm = {
     //网络请求
     request : function(param){
-        var _this = this;
+        let _this = this;
         $.ajax({
             url             : param.url     || '',
             type            : param.method  || 'get',
@@ -42,13 +42,13 @@ var _gm = {
     },
     //获取url参数
     getUrlParam : function(name){
-        var reg = new RegExp('(^|&)'+ name + '=([^&]*(&|$))');
-        var result = window.location.search.substr(1).match(reg);
+        let reg = new RegExp('(^|&)'+ name + '=([^&]*(&|$))');
+        let result = window.location.search.substr(1).match(reg);
         return result ? decodeURIComponent(result[2]) : null;
     },
     // 渲染html
     renderHtml : function(htmlTemplate, data){
-        var template    = Hogan.compile(htmlTemplate),
+        let template    = Hogan.compile(htmlTemplate),
             result      = template.render(data);
         return result;
     },
@@ -62,7 +62,8 @@ var _gm = {
     },
     //字段验证，支持非空，手机，邮箱判断
     validate : function(value, type){
-        var value = $.trim(value);
+        console.log(value);
+        value = $.trim(value);
         // 非空验证
         if('require' === type){
             return !!value;
@@ -76,7 +77,7 @@ var _gm = {
               return /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(value);
         }
     },
-    //统一登录处理    
+    //统一登录处理
     doLogin : function(){
         window.location.href= './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },

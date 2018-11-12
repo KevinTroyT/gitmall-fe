@@ -1,8 +1,8 @@
 /*
 * @Author: KevinTroyT
 * @Date:   2018-11-05 15:06:06
- * @Last modified by:   KevinTroyT
- * @Last modified time: 2018-11-07T21:51:20+08:00
+ * @Last modified by:   troykevin
+ * @Last modified time: 2018-11-12T17:15:55+08:00
 */
 /* css reset */
 *
@@ -91,7 +91,7 @@ input[type='checkbox']
 }
 .link:hover
 {
-    color: #e80012;
+    color: #f39c4e;
 }
 .link-text
 {
@@ -115,7 +115,7 @@ input[type='checkbox']
     color: #fff;
     border: none;
     outline: none;
-    background-color: #c60023;
+    background-color: #f39c4e;
 }
 .btn-mini
 {
@@ -138,5 +138,8 @@ input[type='checkbox']
     border: 1px #ddd solid;
     border-radius: 5px;
     background: url(../../image/icon/loading.gif) no-repeat;
+}
+.grey{
+    color: #555;
 }
 /*  */

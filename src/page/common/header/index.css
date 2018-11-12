@@ -1,23 +1,23 @@
 /*
 * @Author: KevinTroyT
 * @Date:   2018-11-05 19:57:18
- * @Last modified by:   KevinTroyT
- * @Last modified time: 2018-11-07T21:43:19+08:00
+ * @Last modified by:   troykevin
+ * @Last modified time: 2018-11-12T17:29:10+08:00
 */
 /*通用头部导航*/
 .header .logo
 {
     font-family: tahoma;
-    font-size: 36px;
+    font-size: 50px;
     font-weight: bold;
 
     position: absolute;
-    top: 34px;
+    top: 14px;
     left: 60px;
 
     display: block;
 
-    color: #c60023;
+    color: #f39c4e;
 }
 .header .search-con
 {
@@ -25,14 +25,15 @@
 }
 .header .search-con .search-input
 {
-    font-size: 15px;
-    line-height: 40px;
+    font-size: 12px;
+    line-height: 30px;
 
     width: 550px;
-    height: 40px;
+    height: 30px;
     padding-left: 10px;
 
-    border: 2px #c60023 solid;
+    border: 2px #f39c4e solid;
+    border-radius: 1rem 0 0 1rem;
     outline: none;
 }
 .header .search-con .search-btn
@@ -40,7 +41,9 @@
     position: absolute;
 
     width: 80px;
-    height: 44px;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 0 1rem 1rem 0;
 }
 /* 面包屑导航*/
 .crump
@@ -53,5 +56,5 @@
 
     color: #888;
     background-color: #eee;
-    border-top: 2px #c60023 solid;
+    border-top: 2px #f39c4e solid;
 }

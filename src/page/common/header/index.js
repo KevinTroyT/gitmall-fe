@@ -1,8 +1,8 @@
 /*
 * @Author: KevinTroyT
 * @Date:   2018-11-05 19:57:23
-* @Last Modified by:   KevinTroyT
-* @Last Modified time: 2018-11-05 20:21:14
+ * @Last modified by:   KevinTroyT
+ * @Last modified time: 2018-11-08T15:02:57+08:00
 */
 'use strict';
 require('./index.css');
@@ -10,6 +10,7 @@ const _gm = require('util/gitmall.js')
 //通用的header
 let header = {
     init : function(){
+        this.onLoad();
         this.bindEvent();
     },
     onLoad : function(){
@@ -46,4 +47,4 @@ let header = {
         }
     }
 };
-header.init(); 
+header.init();
