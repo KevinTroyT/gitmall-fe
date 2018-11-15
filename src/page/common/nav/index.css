@@ -2,7 +2,7 @@
 * @Author: KevinTroyT
 * @Date:   2018-11-05 16:39:30
  * @Last modified by:   troykevin
- * @Last modified time: 2018-11-13T20:50:19+08:00
+ * @Last modified time: 2018-11-13T21:37:43+08:00
 */
 .nav
 {
@@ -46,7 +46,7 @@
     border-left: 1px #ddd solid;
     background-color: #f4f4f4;
 }
-.fa
+.nav .fa
 {
     color: #f39e4c;
 }

@@ -2,7 +2,7 @@
 * @Author: KevinTroyT
 * @Date:   2018-11-05 15:06:06
  * @Last modified by:   troykevin
- * @Last modified time: 2018-11-12T17:15:55+08:00
+ * @Last modified time: 2018-11-15T21:53:07+08:00
 */
 /* css reset */
 *
@@ -142,4 +142,17 @@ input[type='checkbox']
 .grey{
     color: #555;
 }
-/*  */
+/* 错误提示 */
+.err-tip
+{
+    font-size: 40px;
+    color: #f90;
+    font-weight: bold;
+    line-height: 200px;
+
+    height: 200px;
+
+    text-align: center;
+
+    background-color: #eee;
+}

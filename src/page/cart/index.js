@@ -3,7 +3,7 @@
  * @Date:   2018-11-13T08:44:13+08:00
  * @Email:  q964049459@gmail.com
  * @Last modified by:   troykevin
- * @Last modified time: 2018-11-13T20:53:57+08:00
+ * @Last modified time: 2018-11-13T21:19:07+08:00
  */
 'use strict';
 require('./index.css');
@@ -124,7 +124,7 @@ let page = {
         $(document).on('click', '.btn-submit', function(){
             // 总价>0提交
             if(_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0){
-                window.location.href = './confirm.html';
+                window.location.href = './order-confirm.html';
             }else{
                 _gm.errorTips('请选择商品后再提交');
             }
