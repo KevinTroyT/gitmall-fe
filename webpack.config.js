@@ -2,7 +2,7 @@
 * @Author: KevinTroyT
 * @Date:   2018-10-31 19:17:41
  * @Last modified by:   troykevin
- * @Last modified time: 2018-11-15T22:12:31+08:00
+ * @Last modified time: 2018-11-15T23:19:13+08:00
 */
 const HtmlWebpackPlugin           =       require('html-webpack-plugin')
 const webpack                     =       require('webpack');
@@ -45,6 +45,7 @@ let config = {
         'order-confirm'             : ['./src/page/order-confirm/index.js'],
         'order-list'                : ['./src/page/order-list/index.js'],
         'order-detail'              : ['./src/page/order-detail/index.js'],
+        'payment'                   : ['./src/page/payment/index.js'],
         'user-login'                : ['./src/page/user-login/index.js'],
         'user-register'             : ['./src/page/user-register/index.js'],
         'user-pass-reset'           : ['./src/page/user-pass-reset/index.js'],
@@ -99,6 +100,7 @@ let config = {
         new HtmlWebpackPlugin(getHtmlConfig('order-confirm','订单确认')),
         new HtmlWebpackPlugin(getHtmlConfig('order-list','订单列表')),
         new HtmlWebpackPlugin(getHtmlConfig('order-detail','订单详情')),
+        new HtmlWebpackPlugin(getHtmlConfig('payment','支付页面')),
         new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
         new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset','找回密码')),

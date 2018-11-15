@@ -2,7 +2,7 @@
 * @Author: KevinTroyT
 * @Date:   2018-11-01 14:03:32
  * @Last modified by:   troykevin
- * @Last modified time: 2018-11-13T00:14:51+08:00
+ * @Last modified time: 2018-11-16T00:39:34+08:00
 */
 'use strict';
 let Hogan = require('hogan.js')
@@ -42,9 +42,12 @@ let _gm = {
     },
     //获取url参数
     getUrlParam : function(name){
-        let reg = new RegExp('(^|&)'+ name + '=([^&]*(&|$))');
-        let result = window.location.search.substr(1).match(reg);
-        return result ? decodeURIComponent(result[2]) : null;
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    	var r = window.location.search.substr(1).match(reg);  //匹配目标参数  
+    	if (r != null)
+    		return decodeURIComponent(r[2]);
+    	else
+    		return null; //返回参数值
     },
     // 渲染html
     renderHtml : function(htmlTemplate, data){
