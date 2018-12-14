@@ -3,7 +3,7 @@
  * @Date:   2018-11-08T14:58:05+08:00
  * @Email:  q964049459@gmail.com
  * @Last modified by:   troykevin
- * @Last modified time: 2018-12-15T00:11:49+08:00
+ * @Last modified time: 2018-12-15T00:17:15+08:00
  */
  'use strict';
  require('./index.css')
@@ -71,7 +71,7 @@
      loadList : function(){
          var listParam   = this.data.listParam;
          var   listHtml  = '';
-         var _this     = this;
+         var _this       = this;
          var $pListCon   = $('.p-list-con')
          $pListCon.html('<div class="loading"></div>');
          // 删除参数中不用的字段

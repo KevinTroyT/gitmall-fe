@@ -2,7 +2,7 @@
 * @Author: KevinTroyT
 * @Date:   2018-10-31 19:17:41
  * @Last modified by:   troykevin
- * @Last modified time: 2018-12-15T00:02:23+08:00
+ * @Last modified time: 2018-12-15T00:24:38+08:00
 */
 const HtmlWebpackPlugin           =       require('html-webpack-plugin')
 const webpack                     =       require('webpack');
@@ -15,6 +15,7 @@ let getHtmlConfig = function(name,title){
     return {
         template    : './src/view/'+name+'.html',
         filename    : 'view/'+name+'.html',
+        favicon     : './favicon.ico',
         title       : title,
         inject      : true,
         hash        : true,
