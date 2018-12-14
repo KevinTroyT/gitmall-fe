@@ -2,7 +2,7 @@
 * @Author: KevinTroyT
 * @Date:   2018-10-31 19:17:41
  * @Last modified by:   troykevin
- * @Last modified time: 2018-11-15T23:19:13+08:00
+ * @Last modified time: 2018-12-10T15:54:03+08:00
 */
 const HtmlWebpackPlugin           =       require('html-webpack-plugin')
 const webpack                     =       require('webpack');
@@ -25,13 +25,13 @@ let getHtmlConfig = function(name,title){
 let config = {
     //devServer 接口测试
     devServer: {
-        port: 8088,
+        port: 8080,
         historyApiFallback: {
             index: '/dist/views/index.html'
         },
         proxy: {
             '/': {
-                target          : 'http://test.happymmall.com',
+                target          : 'http://c9pz6h.natappfree.cc/',
                 changeOrigin    : true
             }
         }
@@ -53,6 +53,7 @@ let config = {
         'user-center'               : ['./src/page/user-center/index.js'],
         'user-center-update'        : ['./src/page/user-center-update/index.js'],
         'result'                    : ['./src/page/result/index.js'],
+        'about'                     : ['./src/page/about/index.js']
     },
     output: {
         path        : './dist',
@@ -108,6 +109,7 @@ let config = {
         new HtmlWebpackPlugin(getHtmlConfig('user-center','个人中心')),
         new HtmlWebpackPlugin(getHtmlConfig('user-center-update','修改个人信息')),
         new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
+        new HtmlWebpackPlugin(getHtmlConfig('about','关于gitmall')),
     ]
 };
 if ('dev' === WEBPACK_ENV){
