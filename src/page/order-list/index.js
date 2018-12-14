@@ -9,14 +9,14 @@
  require('./index.css')
  require('page/common/nav/index.js')
  require('page/common/header/index.js')
- let navSide            = require('page/common/nav-side/index.js')
- const _gm              = require('util/gitmall.js')
- const templateIndex    = require('./index.string');
- const Pagination       = require('util/pagination/index.js');
- const _order           = require('service/order-service.js');
+ var navSide            = require('page/common/nav-side/index.js')
+ var _gm              = require('util/gitmall.js')
+ var templateIndex    = require('./index.string');
+ var Pagination       = require('util/pagination/index.js');
+ var _order           = require('service/order-service.js');
 
  //page的逻辑
- let page = {
+ var page = {
      data : {
         listParam : {
             pageNum     : 1,
@@ -37,9 +37,9 @@
      },
      // 加载订单列表
      loadOrderList : function(){
-         let _this = this;
-         let orderListHtml = '';
-         let $listCon = $('.order-list-con');
+         var _this = this;
+         var orderListHtml = '';
+         var $listCon = $('.order-list-con');
          $listCon.html('<div class="loading"></div>')
          _order.getOrderList(this.data.listParam, function(res){
              // 渲染html
@@ -59,7 +59,7 @@
      },
      // 加载分页信息
      loadPagination : function(pageInfo){
-         let _this = this;
+         var _this = this;
          this.pagination ? '' : this.pagination = new Pagination();
          this.pagination.render($.extend({}, pageInfo, {
              container : $('.pagination'),

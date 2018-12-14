@@ -2,17 +2,17 @@
 * @Author: KevinTroyT
 * @Date:   2018-11-01 14:03:32
  * @Last modified by:   troykevin
- * @Last modified time: 2018-11-16T00:39:34+08:00
+ * @Last modified time: 2018-12-15T00:06:20+08:00
 */
 'use strict';
-let Hogan = require('hogan.js')
-let conf = {
+var hogan = require('hogan.js');
+var conf = {
     serverHost : ''
 }
-let _gm = {
+var _gm = {
     //网络请求
     request : function(param){
-        let _this = this;
+        var _this = this;
         $.ajax({
             url             : param.url     || '',
             type            : param.method  || 'get',
@@ -43,7 +43,7 @@ let _gm = {
     //获取url参数
     getUrlParam : function(name){
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-    	var r = window.location.search.substr(1).match(reg);  //匹配目标参数  
+    	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
     	if (r != null)
     		return decodeURIComponent(r[2]);
     	else
@@ -51,7 +51,7 @@ let _gm = {
     },
     // 渲染html
     renderHtml : function(htmlTemplate, data){
-        let template    = Hogan.compile(htmlTemplate),
+        var template    = hogan.compile(htmlTemplate),
             result      = template.render(data);
         return result;
     },

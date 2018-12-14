@@ -10,10 +10,10 @@
  'use strict';
  require('./index.css');
  require('page/common/nav-simple/index.js')
- const _gm       = require('util/gitmall.js')
- const _user     = require('service/user-service.js')
+ var _gm       = require('util/gitmall.js')
+ var _user     = require('service/user-service.js')
  //表单里的错误提示
- const formError = {
+ var formError = {
      show : function(errMsg){
          $('.error-item').show().find('.err-msg').text(errMsg);
      },
@@ -22,7 +22,7 @@
      }
  }
  //page的逻辑
- let page = {
+ var page = {
      data : {
          username   : '',
          question   : '',
@@ -37,11 +37,11 @@
         this.loadStepUsername();
      },
      bindEvent : function(){
-         let _this = this;
+         var _this = this;
          //输入用户名后的按钮点击
          $('#submit-username').click(function(event) {
              /* Act on the event */
-            let username = $.trim($('#username').val());
+            var username = $.trim($('#username').val());
             if(username){
                 _user.getQuestion(username,function(res){
                     _this.data.username = username;
@@ -57,7 +57,7 @@
          //输入密码提示问题答案的按钮点击
          $('#submit-answer').click(function(event) {
              /* Act on the event */
-            let answer = $.trim($('#answer').val());
+            var answer = $.trim($('#answer').val());
             if(answer){
                 //检查密码提示问题答案
                 _user.checkAnswer({
@@ -78,7 +78,7 @@
          //输入新密码后的按钮点击
          $('#submit-password').click(function(event) {
              /* Act on the event */
-            let password = $.trim($('#password').val());
+            var password = $.trim($('#password').val());
             if(password && password.length >=8){
                 //检查密码提示问题答案
                 _user.resetPassword({

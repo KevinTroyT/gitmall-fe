@@ -8,10 +8,10 @@
 'use strict';
 require('./index.css');
 require('page/common/nav-simple/index.js')
-const _gm       = require('util/gitmall.js')
-const _user     = require('service/user-service.js')
+var _gm       = require('util/gitmall.js')
+var _user     = require('service/user-service.js')
 //表单里的错误提示
-const formError = {
+var formError = {
     show : function(errMsg){
         $('.error-item').show().find('.err-msg').text(errMsg);
     },
@@ -20,12 +20,12 @@ const formError = {
     }
 }
 //page的逻辑
-let page = {
+var page = {
     init : function(){
         this.bindEvent();
     },
     bindEvent : function(){
-        let _this = this;
+        var _this = this;
         $('#submit').click(function(event) {
             /* Act on the event */
             _this.submit();
@@ -41,7 +41,7 @@ let page = {
     },
     // 提交伪表单
     submit : function(){
-        let formData = {
+        var formData = {
             username : $.trim($('#username').val()),
             password : $.trim($('#password').val())
         },
@@ -61,7 +61,7 @@ let page = {
 
     },
     formValidate : function(formData){
-        let result = {
+        var result = {
             status  : false,
             msg     : ''
         }

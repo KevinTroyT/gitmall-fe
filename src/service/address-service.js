@@ -3,12 +3,12 @@
  * @Date:   2018-11-13T22:01:52+08:00
  * @Email:  q964049459@gmail.com
  * @Last modified by:   troykevin
- * @Last modified time: 2018-11-15T16:52:26+08:00
+ * @Last modified time: 2018-12-15T00:10:52+08:00
  */
  'use strict';
- const _gm = require('util/gitmall.js');
+ var _gm = require('util/gitmall.js');
 
- let _address = {
+ var _address = {
      //获取地址列表
      getAddressList : function(resolve, reject){
          _gm.request({

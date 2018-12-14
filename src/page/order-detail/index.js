@@ -9,13 +9,13 @@
  require('./index.css')
  require('page/common/nav/index.js')
  require('page/common/header/index.js')
- let navSide            = require('page/common/nav-side/index.js')
- const _gm              = require('util/gitmall.js')
- const templateIndex    = require('./index.string');
- const _order           = require('service/order-service.js');
+ var navSide            = require('page/common/nav-side/index.js')
+ var _gm              = require('util/gitmall.js')
+ var templateIndex    = require('./index.string');
+ var _order           = require('service/order-service.js');
 
  //page的逻辑
- let page = {
+ var page = {
      data : {
         orderNumber : _gm.getUrlParam('orderNumber')
      },
@@ -31,7 +31,7 @@
          this.loadDetail();
      },
      bindEvent : function(){
-         let _this = this;
+         var _this = this;
          $(document).on('click','.order-cancel', function(){
              _order.cancelOrder(_this.data.orderNumber, function(res){
                  _gm.successTips('该订单取消成功');
@@ -43,9 +43,9 @@
      },
      // 加载详情
      loadDetail : function(){
-         let _this = this;
-         let orderDetailHtml = '';
-         let $content = $('.content');
+         var _this = this;
+         var orderDetailHtml = '';
+         var $content = $('.content');
          $content.html('<div class="loading"></div>')
          _order.getOrderDetail(this.data.orderNumber, function(res){
              _this.dataFilter(res);

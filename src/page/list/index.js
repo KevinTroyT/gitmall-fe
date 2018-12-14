@@ -3,17 +3,17 @@
  * @Date:   2018-11-08T14:58:05+08:00
  * @Email:  q964049459@gmail.com
  * @Last modified by:   troykevin
- * @Last modified time: 2018-11-12T14:19:15+08:00
+ * @Last modified time: 2018-12-15T00:11:49+08:00
  */
  'use strict';
  require('./index.css')
  require('page/common/nav/index.js')
  require('page/common/header/index.js')
- const _gm              = require('util/gitmall.js')
- const templateIndex    = require('./index.string');
- const Pagination        = require('util/pagination/index.js');
- const _product         = require('service/product-service.js');
- let page = {
+ var _gm              = require('util/gitmall.js')
+ var templateIndex    = require('./index.string');
+ var Pagination       = require('util/pagination/index.js');
+ var _product         = require('service/product-service.js');
+ var page = {
      data : {
          listParam : {
              keyword     : _gm.getUrlParam('keyword')       || '',
@@ -31,11 +31,11 @@
          this.loadList();
      },
      bindEvent : function(){
-         let _this = this
+         var _this = this
          $('.sort-item').click(function(event) {
              /* Act on the event */
              // 排序的点击事件
-             let $this = $(this)
+             var $this = $(this)
              _this.data.listParam.pageNum = 1;
              // 点击默认排序
              if($this.data('type') === 'default'){
@@ -69,10 +69,10 @@
      },
      // 加载List数据
      loadList : function(){
-         let listParam   = this.data.listParam;
-         let   listHtml  = '';
-         const _this     = this;
-         let $pListCon   = $('.p-list-con')
+         var listParam   = this.data.listParam;
+         var   listHtml  = '';
+         var _this     = this;
+         var $pListCon   = $('.p-list-con')
          $pListCon.html('<div class="loading"></div>');
          // 删除参数中不用的字段
          listParam.categoryId ? delete listParam.keyword : delete listParam.categoryId;
@@ -97,7 +97,7 @@
      },
      // 加载分页信息
      loadPagination : function(pageInfo){
-         let _this = this;
+         var _this = this;
          this.pagination ? '' : this.pagination = new Pagination();
          this.pagination.render($.extend({}, pageInfo, {
              container : $('.pagination'),

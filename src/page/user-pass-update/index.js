@@ -10,12 +10,12 @@
   require('./index.css')
   require('page/common/nav/index.js')
   require('page/common/header/index.js')
-  let navSide            = require('page/common/nav-side/index.js')
-  const _gm              = require('util/gitmall.js')
-  const _user            = require('service/user-service.js');
+  var navSide            = require('page/common/nav-side/index.js')
+  var _gm              = require('util/gitmall.js')
+  var _user            = require('service/user-service.js');
 
   //page的逻辑
-  let page = {
+  var page = {
       init : function(){
           this.onLoad();
           this.bindEvent();
@@ -27,15 +27,15 @@
           })
       },
       bindEvent : function(){
-          let _this = this;
+          var _this = this;
           //点击提交按钮后
           $(document).on("click", '.btn-submit', function(){
-              let userInfo = {
+              var userInfo = {
                   password      : $.trim($('#password').val()),
                   passwordNew      : $.trim($('#password-new').val()),
                   passwordConfirm   : $.trim($('#password-confirm').val()),
               }
-              let validateResult = _this.validateForm(userInfo);
+              var validateResult = _this.validateForm(userInfo);
               if (validateResult.status){
                   _user.updatePassword({
                       passwordOld : userInfo.password,
@@ -51,7 +51,7 @@
           })
       },
       validateForm : function(formData){
-          let result = {
+          var result = {
               status  : false,
               msg     : ''
           }
