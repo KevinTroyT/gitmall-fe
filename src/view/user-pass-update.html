@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= require('html-loader!./layout/head-common.html') %>
+    <title><%= htmlWebpackPlugin.options.title %> - GitMall</title>
+</head>
+<body>
+    <%= require('html-loader!./layout/nav.html') %>
+    <%= require('html-loader!./layout/header.html') %>
+    <div class="crump">
+        <div class="w">
+            <div class="crump-con">
+                <a href="./index.html" class="link">GMall</a>
+                <span>></span>
+                <span class="link-text"><%= htmlWebpackPlugin.options.title %></span>
+            </div>
+        </div>
+    </div>
+    <div class="page-wrap w">
+        <%= require('html-loader!./layout/nav-side.html') %>
+        <div class="content with-nav">
+            <div class="panel">
+                <div class="panel-title">
+                    修改密码
+                </div>
+                <div class="panel-body">
+                    <div class="userInfo">
+                        <div class="form-line">
+                            <span class="label">旧密码:</span>
+                            <input type="password" class="input" autocomplete="off" id="password">
+                        </div>
+                        <div class="form-line">
+                            <span class="label">新密码:</span>
+                            <input type="password" class="input" autocomplete="off" id="password-new">
+                        </div>
+                        <div class="form-line">
+                            <span class="label">确认密码:</span>
+                            <input type="password" class="input" autocomplete="off" id="password-confirm">
+                        </div>
+                        <span class="btn btn-submit">提交</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%= require('html-loader!./layout/footer.html') %>
+</body>
+</html>

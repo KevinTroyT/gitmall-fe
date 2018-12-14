@@ -1,0 +1,26 @@
+/*
+* @Author: KevinTroyT
+* @Date:   2018-11-05 19:51:14
+ * @Last modified by:   troykevin
+ * @Last modified time: 2018-11-12T17:03:08+08:00
+*/
+.footer
+{
+    margin-top: 40px;
+    border-top: 1px #ddd solid;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+.footer .links
+{
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}
+.footer .links .link{
+    padding: 0 10px;
+}
+.footer .copyright
+{
+    text-align: center;
+}

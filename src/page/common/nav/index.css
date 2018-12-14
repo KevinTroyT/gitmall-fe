@@ -1,0 +1,52 @@
+/*
+* @Author: KevinTroyT
+* @Date:   2018-11-05 16:39:30
+ * @Last modified by:   troykevin
+ * @Last modified time: 2018-11-13T21:37:43+08:00
+*/
+.nav
+{
+    font-size: 12px;
+    line-height: 30px;
+
+    height: 30px;
+
+    border-bottom: 1px #ddd solid;
+    background: #eee;
+}
+/*用户*/
+.nav .user
+{
+    float: left;
+}
+.nav .user.login
+{
+    display: none;
+}
+.nav .user .link
+{
+    margin-right: 10px;
+}
+/*导航连接部分*/
+.nav .nav-list .nav-item
+{
+    display: inline-block;
+    float: right;
+
+    margin-left: 20px;
+    padding: 0 10px;
+
+    border-right: 1px #f3f3f3 solid;
+    border-left: 1px #f3f3f3 solid;
+}
+.nav .nav-list .nav-item:hover
+{
+    border-right: 1px #ddd solid;
+    border-bottom: 1px #f3f3f3 solid;
+    border-left: 1px #ddd solid;
+    background-color: #f4f4f4;
+}
+.nav .fa
+{
+    color: #f39e4c;
+}

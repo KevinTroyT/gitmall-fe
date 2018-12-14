@@ -1,0 +1,158 @@
+/*
+* @Author: KevinTroyT
+* @Date:   2018-11-05 15:06:06
+ * @Last modified by:   troykevin
+ * @Last modified time: 2018-11-15T21:53:07+08:00
+*/
+/* css reset */
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    font-family: monaco,tahoma, arial, Microsoft Yahei, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+
+    background-color: #f7f7f7;
+}
+li
+{
+    list-style: none;
+}
+a
+{
+    text-decoration: none;
+}
+img
+{
+    display: block;
+
+    border: none;
+}
+label
+{
+    cursor: pointer;
+}
+input[type='checkbox']
+{
+    cursor: pointer;
+}
+
+/* 定宽布局 */
+.w
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: 1080px;
+    margin: 0 auto;
+}
+/* panel */
+.panel
+{
+    margin-bottom: 10px;
+    padding: 10px;
+
+    background-color: #fff;
+}
+.panel .panel-title
+{
+    font-size: 14px;
+    font-weight: bold;
+
+    padding: 10px;
+
+    color: #666;
+    border-bottom: 1px #eee solid;
+}
+.panel .panel-body
+{
+    overflow: hidden;
+
+    padding: 10px;
+}
+/* 通用样式 */
+/* 隐藏 */
+.hide
+{
+    display: none;
+}
+/* 超链样式 */
+.link
+{
+    cursor: pointer;
+    text-decoration: none;
+
+    color: #999;
+}
+.link:hover
+{
+    color: #f39c4e;
+}
+.link-text
+{
+    color: #999;
+}
+/* btn */
+.btn
+{
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 40px;
+
+    display: inline-block;
+
+    height: 40px;
+    padding: 0 20px;
+
+    cursor: pointer;
+    vertical-align: center;
+
+    color: #fff;
+    border: none;
+    outline: none;
+    background-color: #f39c4e;
+}
+.btn-mini
+{
+    font-size: 12px;
+    line-height: 25px;
+
+    height: 25px;
+    padding: 0 10px;
+}
+/* loading */
+.loading
+{
+    display: block;
+
+    width: 65px;
+    height: 65px;
+    margin: 10px auto;
+
+    opacity: .6;
+    border: 1px #ddd solid;
+    border-radius: 5px;
+    background: url(../../image/icon/loading.gif) no-repeat;
+}
+.grey{
+    color: #555;
+}
+/* 错误提示 */
+.err-tip
+{
+    font-size: 40px;
+    color: #f90;
+    font-weight: bold;
+    line-height: 200px;
+
+    height: 200px;
+
+    text-align: center;
+
+    background-color: #eee;
+}
