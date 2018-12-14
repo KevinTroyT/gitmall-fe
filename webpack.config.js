@@ -57,8 +57,8 @@ let config = {
         'about'                     : ['./src/page/about/index.js']
     },
     output: {
-        path        : './dist',
-        publicPath  : '/dist',
+        path        : './dist/',
+        publicPath  : '/dist/',
         filename    : 'js/[name].js'
     },
     externals : {
