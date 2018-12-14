@@ -1,6 +1,6 @@
 # gitmall-fe
 
-## gitmall前端环境
+### gitmall前端环境 前台
 
 1.安装nodejs,推荐6.12.3
 
