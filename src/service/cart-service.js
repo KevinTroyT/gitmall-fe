@@ -2,12 +2,12 @@
 * @Author: KevinTroyT
 * @Date:   2018-11-05 17:09:31
  * @Last modified by:   troykevin
- * @Last modified time: 2018-11-13T20:32:25+08:00
+ * @Last modified time: 2018-12-15T00:10:53+08:00
 */
 'use strict';
-const _gm = require('util/gitmall.js');
+var _gm = require('util/gitmall.js');
 
-let _cart = {
+var _cart = {
     //获取购物车数量
     getCartCount : function(resolve, reject){
         _gm.request({

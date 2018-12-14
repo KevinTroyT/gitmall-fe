@@ -7,10 +7,10 @@
  */
 'use strict';
 require('./index.css');
-const _gm               = require('util/gitmall.js')
-const templatePaination = require('./index.string');
-let Pagination = function (){
-    let _this = this;
+var _gm               = require('util/gitmall.js')
+var templatePaination = require('./index.string');
+var Pagination = function (){
+    var _this = this;
     this.defaultOption = {
         container       : null,
         pageNum         : 1,
@@ -19,7 +19,7 @@ let Pagination = function (){
     };
     //绑定事件
     $(document).on('click', '.pg-item', function(){
-        let $this = $(this);
+        var $this = $(this);
         if($this.hasClass('active') || $this.hasClass('disabled')){
             return;
         }
@@ -45,11 +45,11 @@ Pagination.prototype.render = function(userOption){
 }
 // 获取分页内容
 Pagination.prototype.getPaginationHtml = function(){
-    let html        = '';
-    let pageArray   = [];
-    let option      = this.option;
-    let start       = this.option.pageNum - option.pageRange > 0 ? option.pageNum - option.pageRange : 1;
-    let end         = option.pageNum + option.pageRange < option.pages ? option.pageNum + option.pageRange : option.pages;
+    var html        = '';
+    var pageArray   = [];
+    var option      = this.option;
+    var start       = this.option.pageNum - option.pageRange > 0 ? option.pageNum - option.pageRange : 1;
+    var end         = option.pageNum + option.pageRange < option.pages ? option.pageNum + option.pageRange : option.pages;
     // 上一页按钮的数据
     pageArray.push({
         name : '上一页',
@@ -57,7 +57,7 @@ Pagination.prototype.getPaginationHtml = function(){
         disabled : !(this.option.hasPreviousPage)
     });
     // 数字按钮的处理
-    for (let i = start;i <= end;i++){
+    for (var i = start;i <= end;i++){
         pageArray.push({
             name : i,
             value : i,

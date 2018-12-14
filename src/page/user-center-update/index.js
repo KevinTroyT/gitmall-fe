@@ -10,13 +10,13 @@
  require('./index.css')
  require('page/common/nav/index.js')
  require('page/common/header/index.js')
- let navSide            = require('page/common/nav-side/index.js')
- const _gm              = require('util/gitmall.js')
- const templateIndex    = require('./index.string');
- const _user            = require('service/user-service.js');
+ var navSide            = require('page/common/nav-side/index.js')
+ var _gm              = require('util/gitmall.js')
+ var templateIndex    = require('./index.string');
+ var _user            = require('service/user-service.js');
 
  //page的逻辑
- let page = {
+ var page = {
      init : function(){
          this.onLoad();
          this.bindEvent();
@@ -30,16 +30,16 @@
          this.loadUserInfo();
      },
      bindEvent : function(){
-         let _this = this;
+         var _this = this;
          //点击提交按钮后
          $(document).on("click", '.btn-submit', function(){
-             let userInfo = {
+             var userInfo = {
                  phone      : $.trim($('#phone').val()),
                  email      : $.trim($('#email').val()),
                  question   : $.trim($('#question').val()),
                  answer     : $.trim($('#answer').val()),
              }
-             let validateResult = _this.validateForm(userInfo);
+             var validateResult = _this.validateForm(userInfo);
              if (validateResult.status){
                  _user.updateUserInfo(userInfo, function(res, msg){
                      _gm.successTips(msg);
@@ -54,7 +54,7 @@
      },
      loadUserInfo : function(){
          _user.getUserInfo(function(res){
-             let userHtml = '';
+             var userHtml = '';
              userHtml = _gm.renderHtml(templateIndex,res);
              $('.panel-body').html(userHtml);
          },function(errMsg){
@@ -62,7 +62,7 @@
          })
      },
      validateForm : function(formData){
-         let result = {
+         var result = {
              status  : false,
              msg     : ''
          }

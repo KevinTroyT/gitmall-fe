@@ -8,11 +8,11 @@
 'use strict';
 require('./index.css');
 require('page/common/header/index.js')
-const nav              = require('page/common/nav/index.js')
-const _gm              = require('util/gitmall.js')
-const templateIndex    = require('./index.string');
-const _cart            = require('service/cart-service.js');
-let page = {
+var nav              = require('page/common/nav/index.js')
+var _gm              = require('util/gitmall.js')
+var templateIndex    = require('./index.string');
+var _cart            = require('service/cart-service.js');
+var page = {
     data : {
 
     },
@@ -24,11 +24,11 @@ let page = {
         this.loadCart();
     },
     bindEvent : function(){
-        let _this = this;
+        var _this = this;
         // 商品选择/取消选择
         $(document).on('click', '.cart-select', function(){
-            let $this = $(this);
-            let productId = $this.parents('.cart-table').data('product-id');
+            var $this = $(this);
+            var productId = $this.parents('.cart-table').data('product-id');
             // 切换选中状态
             if($this.is(':checked')){
                 // 选中
@@ -48,7 +48,7 @@ let page = {
         });
         //全选 取消全选
         $(document).on('click', '.cart-select-all', function(){
-            let $this = $(this);
+            var $this = $(this);
             // 切换选中状态
             if($this.is(':checked')){
                 //  全选
@@ -68,14 +68,14 @@ let page = {
         });
         // 商品数量
         $(document).on('click', '.count-btn', function(){
-            let $this       = $(this);
-            let $pCount     = $this.siblings('.count-input');
-            let type        = $this.hasClass('plus')  ? 'plus' : 'minus';
-            let productId   = $this.parents('.cart-table').data('product-id');
-            let currCount   = parseInt($pCount.val());
-            let minCount    = 1;
-            let maxCount    = parseInt($pCount.data('max'));
-            let newCount    = 0;
+            var $this       = $(this);
+            var $pCount     = $this.siblings('.count-input');
+            var type        = $this.hasClass('plus')  ? 'plus' : 'minus';
+            var productId   = $this.parents('.cart-table').data('product-id');
+            var currCount   = parseInt($pCount.val());
+            var minCount    = 1;
+            var maxCount    = parseInt($pCount.data('max'));
+            var newCount    = 0;
             if(type === 'plus'){
                 if(currCount >= maxCount){
                     _gm.errorTips('商品数量上限');
@@ -100,17 +100,17 @@ let page = {
         // 删除单个商品
         $(document).on('click', '.cart-delete', function(){
             if(window.confirm('确认删除该商品吗？')){
-                let productId   = $(this).parents('.cart-table').data('product-id');
+                var productId   = $(this).parents('.cart-table').data('product-id');
                 _this.deleteCartProduct(productId)
             }
         });
         // 删除选中商品
         $(document).on('click', '.delete-selected', function(){
             if(window.confirm('确认删除选中的商品吗？')){
-                let arrProductIds = [];
-                let $selectedItem = $(".cart-select:checked");
+                var arrProductIds = [];
+                var $selectedItem = $(".cart-select:checked");
                 // 遍历查找选中的
-                for(let i = 0,iLength = $selectedItem.length;i<iLength;i++){
+                for(var i = 0,iLength = $selectedItem.length;i<iLength;i++){
                     arrProductIds.push($($selectedItem[i]).parents('.cart-table').data('product-id'));
                 }
                 if(arrProductIds.length){
@@ -132,7 +132,7 @@ let page = {
     },
     // 加载购物车
     loadCart : function(){
-        let _this       = this;
+        var _this       = this;
         _cart.getCartList(function(res){
             _this.renderCart(res);
         },function(errMsg){
@@ -145,7 +145,7 @@ let page = {
     },
     // 删除指定商品
     deleteCartProduct : function(productIds){
-        let _this = this;
+        var _this = this;
         _cart.deleteProduct(productIds, function(res){
             _this.renderCart(res);
         },function(errMsg){
@@ -158,7 +158,7 @@ let page = {
         // 缓存购物车
         this.data.cartInfo = data;
         // 生成html
-        let cartHtml = _gm.renderHtml(templateIndex, data);
+        var cartHtml = _gm.renderHtml(templateIndex, data);
         $('.page-wrap').html(cartHtml)
         // 更新导航内的购物车
         nav.loadCartCount();

@@ -9,11 +9,11 @@
 require('./index.css');
 require('page/common/nav/index.js')
 require('page/common/header/index.js')
-const _gm              = require('util/gitmall.js')
-const templateIndex    = require('./index.string');
-const _product         = require('service/product-service.js');
-const _cart            = require('service/cart-service.js');
-let page = {
+var _gm              = require('util/gitmall.js')
+var templateIndex    = require('./index.string');
+var _product         = require('service/product-service.js');
+var _cart            = require('service/cart-service.js');
+var page = {
     data : {
         productId     : _gm.getUrlParam('productId')       || '',
     },
@@ -29,20 +29,20 @@ let page = {
         this.loadDetail();
     },
     bindEvent : function(){
-        let _this = this;
+        var _this = this;
 
         // 图片预览
         $(document).on('mouseenter', '.p-img-item', function(){
-            let imageUrl = $(this).find('.p-img').attr('src');
+            var imageUrl = $(this).find('.p-img').attr('src');
             $('.main-img').attr('src',imageUrl);
         });
         // count操作
         $(document).on('click', '.p-count-btn' ,function(){
-            let type        = $(this).hasClass('plus') ? 'plus' : 'minus';
-            let $pCount     = $('.p-count');
-            let currCount   = parseInt($pCount.val());
-            let minCount    = 1;
-            let maxCount    = _this.data.detailInfo.stock || 1;
+            var type        = $(this).hasClass('plus') ? 'plus' : 'minus';
+            var $pCount     = $('.p-count');
+            var currCount   = parseInt($pCount.val());
+            var minCount    = 1;
+            var maxCount    = _this.data.detailInfo.stock || 1;
             if(type === 'plus'){
                 $pCount.val(currCount < maxCount ? currCount + 1: maxCount)
             }else if(type === 'minus'){
@@ -63,9 +63,9 @@ let page = {
     },
     // 加载商品详情数据
     loadDetail : function(){
-        let _this       = this;
-        let html        = '';
-        let $pageWrap   = $('.page-wrap');
+        var _this       = this;
+        var html        = '';
+        var $pageWrap   = $('.page-wrap');
         //loading
         $pageWrap.html('<div class="loading"></div>')
         _product.getProductDetail(this.data.productId, function(res){

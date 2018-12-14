@@ -9,12 +9,12 @@
  require('./index.css')
  require('page/common/nav/index.js')
  require('page/common/header/index.js')
- const _gm              = require('util/gitmall.js')
- const templateIndex    = require('./index.string');
- const _payment         = require('service/payment-service.js');
+ var _gm              = require('util/gitmall.js')
+ var templateIndex    = require('./index.string');
+ var _payment         = require('service/payment-service.js');
 
  //page的逻辑
- let page = {
+ var page = {
      data : {
         orderNumber : _gm.getUrlParam('orderNumber')
      },
@@ -26,9 +26,9 @@
      },
      // 加载详情
      loadPaymentInfo : function(){
-         let _this = this;
-         let paymentHtml = '';
-         let $pageWrap = $('.page-wrap');
+         var _this = this;
+         var paymentHtml = '';
+         var $pageWrap = $('.page-wrap');
          $pageWrap.html('<div class="loading"></div>')
          _payment.getPaymentInfo(this.data.orderNumber, function(res){
              // 渲染html
@@ -41,7 +41,7 @@
      },
      // 监听订单状态
      listenOrderStatus : function(){
-         let _this = this;
+         var _this = this;
          this.paymentTimer = window.setInterval(function(){
              _payment.getPaymentStatus(_this.data.orderNumber,function(res){
                  if(res == true){

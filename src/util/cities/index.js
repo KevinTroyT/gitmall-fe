@@ -6,7 +6,7 @@
  * @Last modified time: 2018-11-14T20:04:15+08:00
  */
 'use strict';
-let cities = {
+var cities = {
     cityInfo: {
         "安徽": [
             "合肥",
@@ -454,8 +454,8 @@ let cities = {
     },
     // 获取所有省份
     getProvinces : function(){
-        let provinces = [];
-        for(let item in this.cityInfo){
+        var provinces = [];
+        for(var item in this.cityInfo){
             provinces.push(item);
         }
         return provinces;

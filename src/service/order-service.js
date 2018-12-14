@@ -2,12 +2,12 @@
 * @Author: KevinTroyT
 * @Date:   2018-11-05 17:09:31
  * @Last modified by:   troykevin
- * @Last modified time: 2018-11-15T23:00:58+08:00
+ * @Last modified time: 2018-12-15T00:10:55+08:00
 */
 'use strict';
-const _gm = require('util/gitmall.js');
+var _gm = require('util/gitmall.js');
 
-let _order = {
+var _order = {
     //获取商品详细信息
     getProductList : function(resolve, reject){
         _gm.request({

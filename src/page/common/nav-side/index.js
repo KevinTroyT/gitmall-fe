@@ -6,10 +6,10 @@
 */
 
 require('./index.css');
-const _gm               = require('util/gitmall.js')
-const templateIndex     = require('./index.string');
+var _gm               = require('util/gitmall.js')
+var templateIndex     = require('./index.string');
 //侧边导航
-let navSide = {
+var navSide = {
     option : {
         name : '',
         navList : [
@@ -27,12 +27,12 @@ let navSide = {
     //渲染导航菜单
     renderNav : function(){
         //计算active数据
-        for(let i = 0, iLength = this.option.navList.length;i <iLength;i++){
+        for(var i = 0, iLength = this.option.navList.length;i <iLength;i++){
             if(this.option.navList[i].name === this.option.name){
                 this.option.navList[i].isActive = true;
             }
         };
-        let navHtml = _gm.renderHtml(templateIndex,{
+        var navHtml = _gm.renderHtml(templateIndex,{
             navList : this.option.navList
         });
         //把html丢到容器里

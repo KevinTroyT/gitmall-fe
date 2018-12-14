@@ -6,11 +6,11 @@
  * @Last modified time: 2018-11-15T16:48:26+08:00
  */
  'use strict';
- const _gm                      = require('util/gitmall.js')
- const templateAddressModal     = require('./address-modal.string');
- const _address                 = require('service/address-service.js');
- const _cities                  = require('util/cities/index.js');
- let addressModal = {
+ var _gm                      = require('util/gitmall.js')
+ var templateAddressModal     = require('./address-modal.string');
+ var _address                 = require('service/address-service.js');
+ var _cities                  = require('util/cities/index.js');
+ var addressModal = {
      show : function(option){
          // option的绑定
          this.option = option;
@@ -22,16 +22,16 @@
          this.bindEvent();
      },
      bindEvent : function(){
-         let _this = this
+         var _this = this
          // 省份和城市二级联动
          this.$modalWrap.find('#receiver-province').change(function(){
-             let selectedProvince = $(this).val();
+             var selectedProvince = $(this).val();
              _this.loadCities(selectedProvince)
          })
          // 提交收货地址
          this.$modalWrap.find('.address-btn').click(function(){
-             let receiverInfo = _this.getReceiverInfo();
-             let isUpdate     = _this.option.isUpdate;
+             var receiverInfo = _this.getReceiverInfo();
+             var isUpdate     = _this.option.isUpdate;
              // 新地址 验证通过
              if(!isUpdate && receiverInfo.status){
                  _address.save(receiverInfo.data, function(res){
@@ -71,7 +71,7 @@
          this.$modalWrap.empty();
      },
      loadModal : function(){
-         let addressModalHtml = _gm.renderHtml(templateAddressModal, {
+         var addressModalHtml = _gm.renderHtml(templateAddressModal, {
              isUpdate   : this.option.isUpdate,
              data       : this.option.data
          })
@@ -85,8 +85,8 @@
      },
      // 加载省份
      loadProvince : function(){
-         let provinces          =  _cities.getProvinces() || [];
-         let $provinceSelect    =  this.$modalWrap.find('#receiver-province');
+         var provinces          =  _cities.getProvinces() || [];
+         var $provinceSelect    =  this.$modalWrap.find('#receiver-province');
          $provinceSelect.html(this.getSelectOption(provinces));
          // 如果是更新，做回填
          if(this.option.isUpdate && this.option.data.receiverProvince){
@@ -96,8 +96,8 @@
      },
      // 加载城市信息
      loadCities : function(provinceName){
-         let cities         = _cities.getCities(provinceName) || [];
-         let $citySelect    = this.$modalWrap.find('#receiver-city');
+         var cities         = _cities.getCities(provinceName) || [];
+         var $citySelect    = this.$modalWrap.find('#receiver-city');
          $citySelect.html(this.getSelectOption(cities));
          // 如果是更新，做回填
          if(this.option.isUpdate && this.option.data.receiverCity){
@@ -106,8 +106,8 @@
      },
      // 获取表单收件人信息，并做表单验证
      getReceiverInfo : function(){
-        let receiverInfo = {};
-        let result       = {
+        var receiverInfo = {};
+        var result       = {
             status : false
         };
         receiverInfo.receiverName       = $.trim(this.$modalWrap.find('#receiver-name').val());
@@ -139,8 +139,8 @@
      },
      // 获取select框的选项 input:array,output:HTML
      getSelectOption : function(optionArray){
-         let html = '<option value="">请选择</option>';
-         for(let i=0,length = optionArray.length;i < length;i++){
+         var html = '<option value="">请选择</option>';
+         for(var i=0,length = optionArray.length;i < length;i++){
              html +=  '<option value="'+optionArray[i]+'">'+optionArray[i]+'</option>'
          }
          return html;

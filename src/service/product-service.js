@@ -3,13 +3,13 @@
  * @Date:   2018-11-08T14:59:47+08:00
  * @Email:  q964049459@gmail.com
  * @Last modified by:   troykevin
- * @Last modified time: 2018-11-13T00:09:17+08:00
+ * @Last modified time: 2018-12-15T00:10:57+08:00
  */
  'use strict';
 
- const _gm = require('util/gitmall.js');
+ var _gm = require('util/gitmall.js');
 
- const _product = {
+ var _product = {
      // 获取商品列表
      getProductList : function(listParam, resolve, reject){
          _gm.request({

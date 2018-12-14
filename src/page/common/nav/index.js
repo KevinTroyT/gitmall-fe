@@ -5,10 +5,10 @@
  * @Last modified time: 2018-11-13T20:52:30+08:00
 */
 require('./index.css');
-const _gm = require('util/gitmall.js')
-const _user = require('service/user-service.js')
-const _cart = require('service/cart-service.js')
-let nav = {
+var _gm = require('util/gitmall.js')
+var _user = require('service/user-service.js')
+var _cart = require('service/cart-service.js')
+var nav = {
     init : function(){
         this.bindEvent();
         this.loadUserInfo();

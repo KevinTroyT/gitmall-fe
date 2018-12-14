@@ -121,7 +121,7 @@
     transition: .3s;
 }
 .p-list-con .p-item:hover .p-price{
-    letter-spacing: 1.1px;
+    varter-spacing: 1.1px;
     font-size: 20px;
 }
 .p-list-con .p-item:hover .p-name-con .p-name

@@ -5,19 +5,19 @@
     </div>
     <div class="form-line">
         <span class="label">电话:</span>
-        <input class="input" id="phone" autocomplete="off" value="{{phone}}">
+        <input class="input" id="phone" autocompvare="off" value="{{phone}}">
     </div>
     <div class="form-line">
         <span class="label">邮箱:</span>
-        <input class="input" id="email" autocomplete="off" value="{{email}}">
+        <input class="input" id="email" autocompvare="off" value="{{email}}">
     </div>
     <div class="form-line">
         <span class="label">安全密码问题:</span>
-        <input class="input" id="question" autocomplete="off" value="{{question}}">
+        <input class="input" id="question" autocompvare="off" value="{{question}}">
     </div>
     <div class="form-line">
         <span class="label">安全密码答案:</span>
-        <input class="input" id="answer" autocomplete="off" value="{{answer}}">
+        <input class="input" id="answer" autocompvare="off" value="{{answer}}">
     </div>
     <span class="btn btn-submit">提交</span>
 </div>

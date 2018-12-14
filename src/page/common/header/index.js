@@ -6,22 +6,22 @@
 */
 'use strict';
 require('./index.css');
-const _gm = require('util/gitmall.js')
+var _gm = require('util/gitmall.js')
 //通用的header
-let header = {
+var header = {
     init : function(){
         this.onLoad();
         this.bindEvent();
     },
     onLoad : function(){
-        let keyword = _gm.getUrlParam('keyword');
+        var keyword = _gm.getUrlParam('keyword');
         // keyword回填输入框
         if(keyword){
             $('#search-input').val(keyword);
         }
     },
     bindEvent : function(){
-        let _this = this;
+        var _this = this;
         //点击搜索提交
         $('#search-btn').click(function(event) {
             /* Act on the event */
@@ -37,7 +37,7 @@ let header = {
     },
     //搜索提交
     searchSubmit : function() {
-        let keyword = $.trim($('#search-input').val());
+        var keyword = $.trim($('#search-input').val());
         //提交有值 跳转this
         if(keyword){
             window.location.href = './list.html?keyword=' + keyword;

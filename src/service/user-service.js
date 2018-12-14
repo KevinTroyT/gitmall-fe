@@ -1,14 +1,14 @@
 /*
 * @Author: KevinTroyT
 * @Date:   2018-11-05 16:53:17
- * @Last modified by:   KevinTroyT
- * @Last modified time: 2018-11-08T14:57:01+08:00
+ * @Last modified by:   troykevin
+ * @Last modified time: 2018-12-15T00:10:58+08:00
 */
 'use strict';
 
-const _gm = require('util/gitmall.js');
+var _gm = require('util/gitmall.js');
 
-const _user = {
+var _user = {
     // 用户登录
     login : function(userInfo, resolve, reject){
         _gm.request({

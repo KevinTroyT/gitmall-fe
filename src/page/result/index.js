@@ -7,12 +7,12 @@
 'use strict';
 require('./index.css');
 require('page/common/nav-simple/index.js')
-const _gm = require('util/gitmall.js')
+var _gm = require('util/gitmall.js')
 $(function(){
-    let type = _gm.getUrlParam('type') || 'default',
+    var type = _gm.getUrlParam('type') || 'default',
         $element = $('.'+ type + '-success');
     if(type === 'payment'){
-        let $orderNumber = $element.find('.order-number'),
+        var $orderNumber = $element.find('.order-number'),
             orderNumber  = _gm.getUrlParam('orderNumber');
         $orderNumber.attr('href', $orderNumber.attr('href') + orderNumber);
     }

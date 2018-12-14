@@ -9,11 +9,11 @@
  require('./index.css')
  require('page/common/nav/index.js')
  require('page/common/header/index.js')
- let navSide            = require('page/common/nav-side/index.js')
- const _gm              = require('util/gitmall.js')
+ var navSide            = require('page/common/nav-side/index.js')
+ var _gm              = require('util/gitmall.js')
 
  //page的逻辑
- let page = {
+ var page = {
      init : function(){
          this.onLoad();
      },
