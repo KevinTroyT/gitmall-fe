@@ -58,7 +58,7 @@ let config = {
     },
     output: {
         path        : './dist/',
-        publicPath  : '/dist/',
+        publicPath  : '../',
         filename    : 'js/[name].js'
     },
     externals : {
