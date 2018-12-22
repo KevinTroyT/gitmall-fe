@@ -58,7 +58,7 @@ let config = {
     },
     output: {
         path        : './dist/',
-        publicPath  : 'dev' === WEBPACK_ENV ? '/dist/' : '//s.nicegmall.cn/gmall-fe/dist/',
+        publicPath  : 'dev' === WEBPACK_ENV ? '/dist/' : '//s.gitmall.club/gmall-fe/dist/',
         filename    : 'js/[name].js'
     },
     externals : {
